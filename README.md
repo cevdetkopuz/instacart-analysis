@@ -51,7 +51,7 @@ instacart-analysis/
 ---
 
 ## Dataset
-[Instacart Market Basket Analysis — Kaggle](https://www.kaggle.com/competitions/instacart-market-basket-analysis)
+[Instacart Market Basket Analysis — Kaggle](https://www.kaggle.com/datasets/psparks/instacart-market-basket-analysis)
 
 | Table | Description |
 |---|---|
