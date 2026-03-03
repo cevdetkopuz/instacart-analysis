@@ -18,30 +18,29 @@ End-to-end data analysis and machine learning project built on real-world e-comm
 ## Project Structure
 ```
 instacart-analysis/
-├── bigquery/           # BigQuery setup notes
+├── bigquery/
+│   ├── setup_notes.md
+│   ├── staging/            # Raw → cleaned layer (SQL scripts)
+│   ├── intermediate/       # Joined & enriched tables (SQL scripts)
+│   └── marts/              # Analytics-ready final tables (SQL scripts)
 ├── data/
-│   ├── raw/            # Raw Kaggle CSV files (not tracked)
-│   ├── processed/      # Cleaned data (not tracked)
-│   └── features/       # Engineered features (not tracked)
-├── dbt_instacart/
-│   ├── models/
-│   │   ├── staging/        # Raw → cleaned layer
-│   │   ├── intermediate/   # Joined & enriched tables
-│   │   └── marts/          # Analytics-ready final tables
-│   └── tests/          # dbt data quality tests
+│   ├── raw/                # Raw Kaggle CSV files (not tracked)
+│   ├── processed/          # Cleaned data (not tracked)
+│   └── features/           # Engineered features (not tracked)
 ├── ml/
-│   ├── notebooks/      # Jupyter notebooks per analysis stage
-│   └── src/            # Reusable Python modules
-└── powerbi/            # Dashboard files
+│   ├── notebooks/          # Jupyter notebooks per analysis stage
+│   └── src/                # Reusable Python modules
+└── powerbi/                # Dashboard files
 ```
 
 ---
 
 ## Project Roadmap
 - [x] Project structure initialized
-- [ ] Raw data loaded into BigQuery
-- [ ] dbt staging models completed
-- [ ] dbt intermediate & mart models completed
+- [x] Raw data loaded into BigQuery
+- [ ] Staging layer SQL scripts completed
+- [ ] Intermediate layer SQL scripts completed
+- [ ] Mart layer SQL scripts completed
 - [ ] EDA & insights generated
 - [ ] RFM customer segmentation (KMeans)
 - [ ] Reorder prediction model (XGBoost)
@@ -88,6 +87,6 @@ instacart-analysis/
 1. Clone the repository
 2. Download the dataset from Kaggle
 3. Upload CSV files to BigQuery (`raw_instacart` dataset)
-4. Run dbt models: `dbt run`
+4. Run SQL scripts in order: `bigquery/staging` → `bigquery/intermediate` → `bigquery/marts`
 5. Open notebooks in `ml/notebooks/` and run sequentially
 ```
